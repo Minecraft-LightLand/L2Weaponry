@@ -1,0 +1,178 @@
+{
+  "replace": false,
+  "values": {
+    "l2weaponry:one_handed_stab": [
+      {
+        "particle_type": "stab",
+        "x_addition": 0.1,
+        "y_addition": -0.1,
+        "z_addition": 0.7,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      }
+    ],
+    "l2weaponry:one_handed_claw_stab": [
+      {
+        "particle_type": "stab",
+        "x_addition": 0.1,
+        "y_addition": -0.1,
+        "z_addition": 0.7,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      }
+    ],
+    "l2weaponry:one_handed_swipe_horizontal_right": [
+      {
+        "particle_type": "slash90",
+        "x_addition": 0.0,
+        "y_addition": 0.0,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      },
+      {
+        "particle_type": "slash90",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      },
+      {
+        "particle_type": "slash90",
+        "x_addition": 0.0,
+        "y_addition": -0.2,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      }
+    ],
+    "l2weaponry:dual_handed_claw": [
+      {
+        "particle_type": "slash360",
+        "x_addition": 0.0,
+        "y_addition": 0.0,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      },
+      {
+        "particle_type": "slash360",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      },
+      {
+        "particle_type": "slash360",
+        "x_addition": 0.0,
+        "y_addition": -0.2,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      }
+    ],
+    "l2weaponry:dual_handed_dagger_one": [
+      {
+        "particle_type": "slash45",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 35.0
+      }
+    ],
+    "l2weaponry:dual_handed_dagger_two": [
+      {
+        "particle_type": "slash45",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 330.0
+      }
+    ],
+    "l2weaponry:dual_handed_dagger_three": [
+      {
+        "particle_type": "slash45",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 35.0
+      },
+      {
+        "particle_type": "slash45",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": -125.0
+      }
+    ],
+    "l2weaponry:dual_handed_dagger_four": [
+      {
+        "particle_type": "slash45",
+        "x_addition": -0.4,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": -90.0
+      },
+      {
+        "particle_type": "slash45",
+        "x_addition": 0.4,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": -90.0
+      }
+    ],
+    "l2weaponry:one_handed_slash_diagonal_right": [
+      {
+        "particle_type": "slash90",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": -45.0
+      }
+    ],
+    "l2weaponry:dual_handed_machete_backwards": [
+      {
+        "particle_type": "slash360",
+        "x_addition": 0.0,
+        "y_addition": 0.0,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": -180.0
+      },
+      {
+        "particle_type": "slash360",
+        "x_addition": 0.0,
+        "y_addition": -0.1,
+        "z_addition": 0.0,
+        "pitch_addition": 0.0,
+        "local_yaw": 0.0,
+        "roll_set": 0.0
+      }
+    ]
+  }
+}

@@ -91,7 +91,7 @@ public enum LangData {
 			ans = ans.withStyle(ChatFormatting.DARK_GREEN);
 		}
 		if (id.startsWith("mats.")) {
-			ans = ans.withStyle(ChatFormatting.GRAY);
+			ans = ans.withStyle(ChatFormatting.DARK_AQUA);
 		}
 
 		if (id.startsWith("legendary.")) {
