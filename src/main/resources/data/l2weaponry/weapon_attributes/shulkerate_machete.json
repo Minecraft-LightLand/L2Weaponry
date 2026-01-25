@@ -1,54 +1,91 @@
 {
   "attributes": {
     "attack_range": 4.0,
+    "category": "machete",
     "two_handed": false,
     "attacks": [
       {
         "hitbox": "HORIZONTAL_PLANE",
-        "damage_multiplier": 1,
+        "damage_multiplier": 1.0,
         "angle": 120,
         "upswing": 0.5,
-        "animation": "bettercombat:one_handed_slash_horizontal_right",
+        "animation": "l2weaponry:one_handed_slash_diagonal_right",
         "swing_sound": {
-          "id": "bettercombat:claymore_stab"
-        }
+          "id": "bettercombat:sword_slash"
+        },
+        "trail_particles": [
+          {
+            "particle_type": "slash90",
+            "x_addition": 0.0,
+            "y_addition": -0.1,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": -45.0
+          }
+        ]
       },
       {
+        "conditions": [
+          "NOT_DUAL_WIELDING"
+        ],
         "hitbox": "HORIZONTAL_PLANE",
-        "damage_multiplier": 1,
+        "damage_multiplier": 1.0,
         "angle": 120,
         "upswing": 0.5,
         "animation": "bettercombat:one_handed_slash_horizontal_left",
         "swing_sound": {
-          "id": "bettercombat:claymore_stab"
+          "id": "bettercombat:sword_slash"
         }
       },
       {
         "conditions": [
+          "DUAL_WIELDING_SAME_CATEGORY",
           "MAIN_HAND_ONLY"
         ],
-        "hitbox": "FORWARD_BOX",
-        "damage_multiplier": 1,
-        "angle": 0,
+        "hitbox": "HORIZONTAL_PLANE",
+        "damage_multiplier": 1.2,
+        "angle": 120,
         "upswing": 0.5,
-        "animation": "bettercombat:one_handed_stab",
+        "animation": "bettercombat:dual_handed_slash_cross",
         "swing_sound": {
-          "id": "bettercombat:katana_slash"
+          "id": "bettercombat:sickle_slash"
         }
       },
       {
         "conditions": [
-          "DUAL_WIELDING_SAME",
+          "DUAL_WIELDING_SAME_CATEGORY",
           "OFF_HAND_ONLY"
         ],
         "hitbox": "HORIZONTAL_PLANE",
-        "damage_multiplier": 0.8,
+        "damage_multiplier": 1.2,
         "angle": 360,
         "upswing": 0.5,
-        "animation": "bettercombat:two_handed_spin",
+        "animation": "l2weaponry:dual_handed_machete_backwards",
         "swing_sound": {
-          "id": "bettercombat:claymore_stab"
-        }
+          "id": "bettercombat:sickle_slash",
+          "pitch": "1.2"
+        },
+        "trail_particles": [
+          {
+            "particle_type": "slash360",
+            "x_addition": 0.0,
+            "y_addition": 0.0,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": -180.0
+          },
+          {
+            "particle_type": "slash360",
+            "x_addition": 0.0,
+            "y_addition": -0.1,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          }
+        ]
       }
     ]
   }

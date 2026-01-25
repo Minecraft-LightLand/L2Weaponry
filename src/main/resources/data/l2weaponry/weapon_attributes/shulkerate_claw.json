@@ -1,56 +1,116 @@
 {
   "attributes": {
     "attack_range": 3.0,
+    "category": "claw",
     "two_handed": false,
-    "pose": "bettercombat:pose_one_handed_wards",
     "attacks": [
       {
+        "conditions": [
+          "NOT_DUAL_WIELDING"
+        ],
+        "hitbox": "FORWARD_BOX",
+        "damage_multiplier": 1.0,
+        "angle": 150,
+        "upswing": 0.5,
+        "animation": "l2weaponry:one_handed_claw_stab",
+        "swing_sound": {
+          "id": "bettercombat:spear_stab",
+          "pitch": "1.2"
+        },
+        "trail_particles": [
+          {
+            "particle_type": "stab",
+            "x_addition": 0.1,
+            "y_addition": -0.1,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          }
+        ]
+      },
+      {
         "hitbox": "HORIZONTAL_PLANE",
-        "damage_multiplier": 1,
-        "angle": 120,
+        "damage_multiplier": 1.0,
+        "angle": 150,
         "upswing": 0.5,
         "animation": "bettercombat:one_handed_swipe_horizontal_right",
         "swing_sound": {
-          "id": "bettercombat:glaive_slash_slow"
-        }
-      },
-      {
-        "hitbox": "FORWARD_BOX",
-        "damage_multiplier": 1,
-        "angle": 0,
-        "upswing": 0.5,
-        "animation": "bettercombat:one_handed_punch",
-        "swing_sound": {
-          "id": "bettercombat:glaive_slash_slow"
-        }
+          "id": "bettercombat:glaive_slash_slow",
+          "pitch": "1.2"
+        },
+        "trail_particles": [
+          {
+            "particle_type": "slash90",
+            "x_addition": 0.0,
+            "y_addition": 0.0,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          },
+          {
+            "particle_type": "slash90",
+            "x_addition": 0.0,
+            "y_addition": -0.1,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          },
+          {
+            "particle_type": "slash90",
+            "x_addition": 0.0,
+            "y_addition": -0.2,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          }
+        ]
       },
       {
         "conditions": [
-          "DUAL_WIELDING_SAME",
-          "OFF_HAND_ONLY"
+          "DUAL_WIELDING_SAME_CATEGORY"
         ],
-        "hitbox": "VERTICAL_PLANE",
-        "damage_multiplier": 1,
-        "angle": 150,
+        "hitbox": "HORIZONTAL_PLANE",
+        "damage_multiplier": 1.2,
+        "angle": 360,
         "upswing": 0.5,
-        "animation": "bettercombat:dual_handed_slash_cross",
+        "animation": "l2weaponry:dual_handed_claw",
         "swing_sound": {
-          "id": "bettercombat:glaive_slash_quick"
-        }
-      },
-      {
-        "conditions": [
-          "DUAL_WIELDING_SAME",
-          "MAIN_HAND_ONLY"
-        ],
-        "hitbox": "VERTICAL_PLANE",
-        "damage_multiplier": 1,
-        "angle": 150,
-        "upswing": 0.5,
-        "animation": "bettercombat:dual_handed_slash_uncross",
-        "swing_sound": {
-          "id": "bettercombat:glaive_slash_quick"
-        }
+          "id": "bettercombat:glaive_slash_quick",
+          "pitch": "1.2"
+        },
+        "trail_particles": [
+          {
+            "particle_type": "slash360",
+            "x_addition": 0.0,
+            "y_addition": 0.0,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          },
+          {
+            "particle_type": "slash360",
+            "x_addition": 0.0,
+            "y_addition": -0.1,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          },
+          {
+            "particle_type": "slash360",
+            "x_addition": 0.0,
+            "y_addition": -0.2,
+            "z_addition": 0.0,
+            "pitch_addition": 0.0,
+            "local_yaw": 0.0,
+            "roll_set": 0.0
+          }
+        ]
       }
     ]
   }
