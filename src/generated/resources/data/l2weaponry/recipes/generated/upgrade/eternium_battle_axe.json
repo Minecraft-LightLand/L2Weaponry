@@ -1,25 +1,15 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "l2complements:eternium_block"
+    "item": "l2complements:eternium_ingot"
   },
   "base": {
-    "tag": "l2weaponry:battle_axe"
+    "item": "l2weaponry:iron_battle_axe"
   },
-  "conditions": [
-    {
-      "type": "l2library:boolean_config",
-      "expected": true,
-      "line": [
-        "enableToolRecraftRecipe"
-      ],
-      "path": "l2_configs/l2complements-common.toml"
-    }
-  ],
   "result": {
     "item": "l2weaponry:eternium_battle_axe"
   },
   "template": {
-    "tag": "l2library:dummy_smithing_template"
+    "item": "l2complements:eternal_upgrade_smithing_template"
   }
 }

@@ -9,6 +9,7 @@ import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
 import com.github.alexthe666.iceandfire.item.DragonSteelTier;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import dev.xkmc.l2weaponry.events.LWGeneralEvents;
+import dev.xkmc.l2weaponry.init.L2Weaponry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,6 +28,15 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class IAFProxyAlex implements IAFProxy {
+
+	/**
+	 * Constructs a new object.
+	 */
+	public IAFProxyAlex() {
+		if (IafConfig.dragonWeaponIceAbility) {
+			L2Weaponry.LOGGER.info("Alex's Ice and Fire loaded");
+		}
+	}
 
 	@Override
 	public void fireHit(ItemStack stack, LivingEntity target, LivingEntity user) {

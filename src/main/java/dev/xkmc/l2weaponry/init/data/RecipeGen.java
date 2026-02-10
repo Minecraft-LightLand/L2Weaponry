@@ -274,9 +274,13 @@ public class RecipeGen {
 
 	public static void upgrade(RegistrateRecipeProvider pvd, ILWToolMats base, ILWToolMats mat) {
 		currentFolder = "generated/upgrade/";
+		var ingot = mat.getIngot();
+		Ingredient ing = ingot == Items.NETHERITE_INGOT ? Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE) :
+				ingot == LCMats.ETERNIUM.getIngot() ? Ingredient.of(LCItems.ETERNAL_TEMPLATE) :
+						AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER;
 		for (LWToolTypes t : LWToolTypes.values()) {
 			if (!mat.hasTool(t)) continue;
-			smithing(pvd, base.getTool(t), mat.getIngot(), mat.getTool(t));
+			smithing(pvd, ing, base.getTool(t), ingot, mat.getTool(t));
 		}
 	}
 
@@ -304,20 +308,20 @@ public class RecipeGen {
 		Consumer<FinishedRecipe> cond = mat.getProvider(pvd, toggle);
 		for (LWToolTypes t : LWToolTypes.values()) {
 			if (!mat.hasTool(t)) continue;
-			unlock(pvd, SmithingTransformRecipeBuilder.smithing(AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER,
+			unlock(pvd, SmithingTransformRecipeBuilder.smithing(Ingredient.of(LCItems.SWAP_TEMPLATE.get()),
 					Ingredient.of(t.tag), Ingredient.of(mat.getBlock()),
 					RecipeCategory.COMBAT, mat.getTool(t))::unlocks, mat.getBlock()).save(cond, getID(mat.getTool(t)));
 		}
 	}
 
-	public static void smithing(RegistrateRecipeProvider pvd, TagKey<Item> in, Item mat, Item out) {
-		unlock(pvd, SmithingTransformRecipeBuilder.smithing(AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER, Ingredient.of(in), Ingredient.of(mat),
+	public static void smithing(RegistrateRecipeProvider pvd, Item in, Item mat, Item out) {
+		unlock(pvd, SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(LCItems.SWAP_TEMPLATE.get()),
+				Ingredient.of(in), Ingredient.of(mat),
 				RecipeCategory.COMBAT, out)::unlocks, mat).save(pvd, getID(out));
 	}
 
-	public static void smithing(RegistrateRecipeProvider pvd, Item in, Item mat, Item out) {
-		Ingredient ing = mat == Items.NETHERITE_INGOT ? Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE) :
-				AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER;
+	public static void smithing(RegistrateRecipeProvider pvd, Ingredient ing, Item in, Item mat, Item out) {
 		unlock(pvd, SmithingTransformRecipeBuilder.smithing(ing, Ingredient.of(in), Ingredient.of(mat),
 				RecipeCategory.COMBAT, out)::unlocks, mat).save(pvd, getID(out));
 	}

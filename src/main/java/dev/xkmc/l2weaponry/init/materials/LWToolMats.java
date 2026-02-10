@@ -60,7 +60,8 @@ public enum LWToolMats implements ILWToolMats {
 
 	@Override
 	public @Nullable ILWToolMats getBaseUpgrade() {
-		return this == NETHERITE ? DIAMOND : null;
+		return this == NETHERITE ? DIAMOND :
+				this == ETERNIUM ? IRON : null;
 	}
 
 	@Override
