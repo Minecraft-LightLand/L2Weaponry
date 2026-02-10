@@ -11,6 +11,6 @@
     "id": "l2weaponry:spear_of_winter_storm"
   },
   "template": {
-    "item": "minecraft:paper"
+    "item": "l2complements:material_swap_smithing_template"
   }
 }

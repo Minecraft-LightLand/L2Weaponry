@@ -1,22 +1,11 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "l2core:bool_config",
-      "expected": true,
-      "line": [
-        "recipe",
-        "enableToolRecraftRecipe"
-      ],
-      "path": "l2configs/l2complements-common.toml"
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_eternium_block": {
+    "has_eternium_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "l2complements:eternium_block"
+            "items": "l2complements:eternium_ingot"
           }
         ]
       },
@@ -32,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_eternium_block"
+      "has_eternium_ingot"
     ]
   ],
   "rewards": {

@@ -58,7 +58,7 @@ public class LWRecipeGen {
 					}
 				}
 			}
-			for (var dispatch : CompatDispatch.LIST){
+			for (var dispatch : CompatDispatch.LIST) {
 				for (ILWToolMats mat : dispatch.values()) {
 					tools(pvd, mat.getStick(), mat.getIngot(), mat);
 				}
@@ -322,9 +322,7 @@ public class LWRecipeGen {
 	}
 
 	public static void smithing(RegistrateRecipeProvider pvd, Item in, Item mat, Item out) {
-		Ingredient ing = mat == Items.NETHERITE_INGOT ? Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE) :
-				AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER;
-		unlock(pvd, SmithingTransformRecipeBuilder.smithing(ing, Ingredient.of(in), Ingredient.of(mat),
+		unlock(pvd, SmithingTransformRecipeBuilder.smithing(Ingredient.of(LCItems.SWAP_TEMPLATE), Ingredient.of(in), Ingredient.of(mat),
 				RecipeCategory.COMBAT, out)::unlocks, mat).save(pvd, getID(out));
 	}
 

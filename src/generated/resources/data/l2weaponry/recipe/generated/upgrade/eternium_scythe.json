@@ -1,27 +1,16 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "l2core:bool_config",
-      "expected": true,
-      "line": [
-        "recipe",
-        "enableToolRecraftRecipe"
-      ],
-      "path": "l2configs/l2complements-common.toml"
-    }
-  ],
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "l2complements:eternium_block"
+    "item": "l2complements:eternium_ingot"
   },
   "base": {
-    "tag": "l2weaponry:scythe"
+    "item": "l2weaponry:iron_scythe"
   },
   "result": {
     "count": 1,
     "id": "l2weaponry:eternium_scythe"
   },
   "template": {
-    "item": "minecraft:paper"
+    "item": "l2complements:eternal_upgrade_smithing_template"
   }
 }
