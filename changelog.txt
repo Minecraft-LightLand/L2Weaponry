@@ -1,3 +1,6 @@
+2.6.0
+- Migrate to use the new templates and eternium recipe
+
 2.5.4
 - Fix IaF stuck in loading issue on certain machines
 
