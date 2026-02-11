@@ -1,3 +1,6 @@
+3.1.0
+- Migrate to use new templates and new eternium recipe
+
 3.0.16
 - Wrap Ice and Fire compatibility so that changes in code won't break
 
