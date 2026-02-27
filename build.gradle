@@ -169,9 +169,9 @@ dependencies {
     compileOnly "curse.maven:mouse-tweaks-60089:5437296"
 
     implementation "curse.maven:the-undergarden-379849:5769852"
-    implementation "curse.maven:jupiter-1072905:6843052"
-    implementation "curse.maven:uranus-1010827:6919185"
-    implementation "curse.maven:iceandfire-ce-1040076:6921933"
+    implementation "curse.maven:jupiter-1072905:7592856"
+    implementation "curse.maven:uranus-1010827:6979353"
+    implementation "curse.maven:iceandfire-ce-1040076:7524985"
     implementation "curse.maven:architectury-api-419699:5786327"
     implementation "curse.maven:allthemodium-364466:6135138"
     implementation "curse.maven:geckolib-388172:6304958"
