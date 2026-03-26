@@ -3,6 +3,7 @@ package dev.xkmc.l2weaponry.content.item.types;
 import dev.xkmc.l2damagetracker.contents.materials.generic.ExtraToolConfig;
 import dev.xkmc.l2weaponry.content.entity.ThrowingAxeEntity;
 import dev.xkmc.l2weaponry.content.item.base.BaseThrowableWeaponItem;
+import dev.xkmc.l2weaponry.init.data.LWConfig;
 import dev.xkmc.l2weaponry.init.data.LangData;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
@@ -21,8 +22,14 @@ public class ThrowingAxeItem extends BaseThrowableWeaponItem {
 	}
 
 	@Override
+	public boolean playerThrowable() {
+		return LWConfig.RECIPE.axeThrowable.get();
+	}
+
+	@Override
 	public void appendHoverText(ItemStack pStack, TooltipContext pLevel, List<Component> list, TooltipFlag pIsAdvanced) {
-		list.add(LangData.TOOL_THROWING_AXE.get());
+		if (playerThrowable())
+			list.add(LangData.TOOL_THROWING_AXE.get());
 		super.appendHoverText(pStack, pLevel, list, pIsAdvanced);
 	}
 

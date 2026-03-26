@@ -9,11 +9,21 @@ public class LWConfig {
 	public static class Recipe extends ConfigInit {
 
 		public final ModConfigSpec.BooleanValue defaultEnchantmentOnWeapons;
+		public final ModConfigSpec.BooleanValue daggerThrowable;
+		public final ModConfigSpec.BooleanValue axeThrowable;
+		public final ModConfigSpec.BooleanValue javelinThrowable;
 
 		public Recipe(Builder builder) {
 			markL2();
 			defaultEnchantmentOnWeapons = builder.text("Default enchantments on crafted weapons")
 					.define("defaultEnchantmentOnWeapons", true);
+			daggerThrowable = builder.text("Allow player to throw dagger")
+					.define("daggerThrowable", true);
+			axeThrowable = builder.text("Allow player to throw throwing axe")
+					.define("axeThrowable", true);
+			javelinThrowable = builder.text("Allow player to throw javelin")
+					.define("javelinThrowable", true);
+
 		}
 
 	}

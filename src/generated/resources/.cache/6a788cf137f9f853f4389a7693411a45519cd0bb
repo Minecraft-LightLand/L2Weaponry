@@ -1,6 +1,6 @@
-// 1.21.1	2026-02-11T03:04:47.838158	Registrate Provider for l2weaponry [Registries, Data Maps, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute), Tags (enchantment), Tags (damage_type), Patchouli Provider, Recipes]
-9f88ba720061c0f4b023610595d6d8253665dd8f assets/l2weaponry/lang/en_ud.json
-32c11e516487da598d8310f845b400d97eed6f35 assets/l2weaponry/lang/en_us.json
+// 1.21.1	2026-03-26T11:26:48.313871	Registrate Provider for l2weaponry [Registries, Data Maps, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute), Tags (enchantment), Tags (damage_type), Patchouli Provider, Recipes]
+8d65dce23f747b96dd7ea85810e8c05d42a16e7a assets/l2weaponry/lang/en_ud.json
+95f8b677bbaa2bc7787544b0fc6ed9e49c23d6c6 assets/l2weaponry/lang/en_us.json
 c5eec27d9446bf5395b623559c1b7dff15c9509c assets/l2weaponry/models/item/abyss_echo.json
 3041a33a8b01ef0bda8b52c1f701aa3ab301762c assets/l2weaponry/models/item/abyss_resonance.json
 30ac5eb366241602fc692fa8cd529f5b7bb77085 assets/l2weaponry/models/item/abyss_shock.json

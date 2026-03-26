@@ -58,4 +58,9 @@ public class EnderJavelin extends JavelinItem implements LegendaryWeapon {
 		list.add(LangData.ENDER_JAVELIN.get());
 	}
 
+	@Override
+	public boolean playerThrowable() {
+		return true;
+	}
+
 }
