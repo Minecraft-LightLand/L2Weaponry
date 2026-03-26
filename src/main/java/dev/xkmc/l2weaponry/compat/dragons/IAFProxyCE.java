@@ -29,82 +29,106 @@ public class IAFProxyCE implements IAFProxy {
 
 	@Override
 	public void fireHit(ItemStack stack, LivingEntity target, LivingEntity user) {
-		if (IafCommonConfig.INSTANCE.armors.dragonFireAbility.getValue()) {
-			if (target instanceof EntityIceDragon) {
-				target.hurt(user.level().damageSources().inFire(), 13.5F);
-			}
+		try {
+			if (IafCommonConfig.INSTANCE.armors.dragonFireAbility.getValue()) {
+				if (target instanceof EntityIceDragon) {
+					target.hurt(user.level().damageSources().inFire(), 13.5F);
+				}
 
-			target.setSecondsOnFire(5);
-			target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
+				target.setSecondsOnFire(5);
+				target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
+			}
+		} catch (Throwable ignore) {
+
 		}
 
 	}
 
 	@Override
 	public void fireDesc(ItemStack stack, List<Component> list) {
-		list.add(Component.translatable("dragon_sword_fire.hurt1").withStyle(ChatFormatting.GREEN));
-		if (IafCommonConfig.INSTANCE.armors.dragonFireAbility.getValue()) {
-			list.add(Component.translatable("dragon_sword_fire.hurt2").withStyle(ChatFormatting.DARK_RED));
+		try {
+			list.add(Component.translatable("dragon_sword_fire.hurt1").withStyle(ChatFormatting.GREEN));
+			if (IafCommonConfig.INSTANCE.armors.dragonFireAbility.getValue()) {
+				list.add(Component.translatable("dragon_sword_fire.hurt2").withStyle(ChatFormatting.DARK_RED));
+			}
+		} catch (Throwable ignore) {
+
 		}
 	}
 
 	@Override
 	public void iceHit(ItemStack stack, LivingEntity target, LivingEntity user) {
 
-		if (IafCommonConfig.INSTANCE.armors.dragonIceAbility.getValue()) {
-			if (target instanceof EntityFireDragon) {
-				target.hurt(user.level().damageSources().drown(), 13.5F);
-			}
+		try {
+			if (IafCommonConfig.INSTANCE.armors.dragonIceAbility.getValue()) {
+				if (target instanceof EntityFireDragon) {
+					target.hurt(user.level().damageSources().drown(), 13.5F);
+				}
 
-			IafEntityData data = IafEntityData.get(target);
-			data.frozenData.setFrozen(target, 200);
-			target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
-			target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
-			target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
+				IafEntityData data = IafEntityData.get(target);
+				data.frozenData.setFrozen(target, 200);
+				target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+				target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
+				target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
+			}
+		} catch (Throwable ignore) {
+
 		}
 	}
 
 	@Override
 	public void iceDesc(ItemStack stack, List<Component> list) {
-		list.add(Component.translatable("dragon_sword_ice.hurt1").withStyle(ChatFormatting.GREEN));
-		if (IafCommonConfig.INSTANCE.armors.dragonIceAbility.getValue()) {
-			list.add(Component.translatable("dragon_sword_ice.hurt2").withStyle(ChatFormatting.AQUA));
+		try {
+			list.add(Component.translatable("dragon_sword_ice.hurt1").withStyle(ChatFormatting.GREEN));
+			if (IafCommonConfig.INSTANCE.armors.dragonIceAbility.getValue()) {
+				list.add(Component.translatable("dragon_sword_ice.hurt2").withStyle(ChatFormatting.AQUA));
+			}
+		} catch (Throwable ignore) {
+
 		}
 	}
 
 	@Override
 	public void lightningHit(ItemStack stack, LivingEntity target, LivingEntity user) {
-		if (IafCommonConfig.INSTANCE.armors.dragonLightningAbility.getValue()) {
-			boolean flag = !(user instanceof Player) || !((double) user.attackAnim > 0.2);
+		try {
+			if (IafCommonConfig.INSTANCE.armors.dragonLightningAbility.getValue()) {
+				boolean flag = !(user instanceof Player) || !((double) user.attackAnim > 0.2);
 
-			if (!user.level().isClientSide && flag) {
-				LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(target.level());
+				if (!user.level().isClientSide && flag) {
+					LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(target.level());
 
-				assert lightningboltentity != null;
+					assert lightningboltentity != null;
 
-				lightningboltentity.getTags().add("iceandfire.bolt_skip_loot");
-				lightningboltentity.getTags().add(user.getStringUUID());
-				lightningboltentity.addTag(LWGeneralEvents.LIGHTNING);
-				lightningboltentity.moveTo(target.position());
-				if (!target.level().isClientSide) {
-					target.level().addFreshEntity(lightningboltentity);
+					lightningboltentity.getTags().add("iceandfire.bolt_skip_loot");
+					lightningboltentity.getTags().add(user.getStringUUID());
+					lightningboltentity.addTag(LWGeneralEvents.LIGHTNING);
+					lightningboltentity.moveTo(target.position());
+					if (!target.level().isClientSide) {
+						target.level().addFreshEntity(lightningboltentity);
+					}
 				}
-			}
 
-			if (target instanceof EntityFireDragon || target instanceof EntityIceDragon) {
-				target.hurt(user.level().damageSources().lightningBolt(), 9.5F);
-			}
+				if (target instanceof EntityFireDragon || target instanceof EntityIceDragon) {
+					target.hurt(user.level().damageSources().lightningBolt(), 9.5F);
+				}
 
-			target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
+				target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
+			}
+		} catch (Throwable ignore) {
+
 		}
 
 	}
 
 	@Override
 	public void lightningDesc(ItemStack stack, List<Component> list) {
-		list.add(Component.translatable("dragon_sword_lightning.hurt1").withStyle(ChatFormatting.GREEN));
-		if (IafCommonConfig.INSTANCE.armors.dragonLightningAbility.getValue()) {
-			list.add(Component.translatable("dragon_sword_lightning.hurt2").withStyle(ChatFormatting.DARK_PURPLE));
+		try {
+			list.add(Component.translatable("dragon_sword_lightning.hurt1").withStyle(ChatFormatting.GREEN));
+			if (IafCommonConfig.INSTANCE.armors.dragonLightningAbility.getValue()) {
+				list.add(Component.translatable("dragon_sword_lightning.hurt2").withStyle(ChatFormatting.DARK_PURPLE));
+			}
+		} catch (Throwable ignore) {
+
 		}
 	}
 

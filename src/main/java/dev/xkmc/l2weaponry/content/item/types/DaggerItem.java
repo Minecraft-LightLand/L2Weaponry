@@ -59,9 +59,15 @@ public class DaggerItem extends BaseThrowableWeaponItem {
 	}
 
 	@Override
+	public boolean playerThrowable() {
+		return LWConfig.COMMON.daggerThrowable.get();
+	}
+
+	@Override
 	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> list, TooltipFlag pIsAdvanced) {
 		list.add(LangData.TOOL_DAGGER.get());
-		list.add(LangData.TOOL_THROW_DAGGER.get());
+		if (playerThrowable())
+			list.add(LangData.TOOL_THROW_DAGGER.get());
 		super.appendHoverText(pStack, pLevel, list, pIsAdvanced);
 	}
 

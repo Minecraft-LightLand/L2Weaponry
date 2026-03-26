@@ -29,6 +29,9 @@ public class LWConfig {
 		public final ForgeConfigSpec.BooleanValue defaultEnchantmentOnWeapons;
 		public final ForgeConfigSpec.BooleanValue diggerEnchantmentOnWeapon;
 		public final ForgeConfigSpec.ConfigValue<List<String>> extraCompatibleEnchantmentCategories;
+		public final ForgeConfigSpec.BooleanValue daggerThrowable;
+		public final ForgeConfigSpec.BooleanValue axeThrowable;
+		public final ForgeConfigSpec.BooleanValue javelinThrowable;
 
 		public final ForgeConfigSpec.IntValue shadowHunterDistance;
 		public final ForgeConfigSpec.IntValue hauntingDemonDistance;
@@ -77,6 +80,12 @@ public class LWConfig {
 					.defineInRange("claw_block_time", 3, 0, 1000);
 			reflectCost = builder.comment("Shield reflect cost")
 					.defineInRange("reflectCost", 0.2, 0, 1);
+			daggerThrowable = builder.comment("Allow player to throw dagger")
+					.define("daggerThrowable", true);
+			axeThrowable = builder.comment("Allow player to throw throwing axe")
+					.define("axeThrowable", true);
+			javelinThrowable = builder.comment("Allow player to throw javelin")
+					.define("javelinThrowable", true);
 			diggerEnchantmentOnWeapon = builder.comment("Allow digger enchantments on weapon")
 					.define("diggerEnchantmentOnWeapon", true);
 			defaultEnchantmentOnWeapons = builder.comment("Default enchantments on crafted weapons")

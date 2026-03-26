@@ -82,8 +82,13 @@ public abstract class BaseThrowableWeaponItem extends GenericWeaponItem implemen
 		player.awardStat(Stats.ITEM_USED.get(this));
 	}
 
+	public boolean playerThrowable() {
+		return true;
+	}
+
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand pHand) {
 		ItemStack stack = player.getItemInHand(pHand);
+		if (!playerThrowable()) return InteractionResultHolder.pass(stack);
 		if (stack.getDamageValue() >= stack.getMaxDamage() - 1) {
 			return InteractionResultHolder.fail(stack);
 		} else {
