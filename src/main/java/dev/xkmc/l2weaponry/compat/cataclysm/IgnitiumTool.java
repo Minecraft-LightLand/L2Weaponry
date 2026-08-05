@@ -1,5 +1,6 @@
 package dev.xkmc.l2weaponry.compat.cataclysm;
 
+import dev.xkmc.cataclysm_mux.LWCataProxy;
 import dev.xkmc.l2damagetracker.contents.attack.DamageData;
 import dev.xkmc.l2damagetracker.contents.materials.generic.ExtraToolConfig;
 import dev.xkmc.l2weaponry.content.entity.BaseThrownWeaponEntity;
@@ -27,7 +28,7 @@ public class IgnitiumTool extends ExtraToolConfig implements LWExtraConfig {
 			float speed = (float) player.getAttributeValue(Attributes.ATTACK_SPEED);
 			factor = 1f / Math.clamp(speed, 0.5f, 2);
 		}
-		CataclysmProxy.stackBlazingBrand(attacker, data.getTarget(), factor);
+		LWCataProxy.stackBlazingBrand(attacker, data.getTarget(), factor);
 	}
 
 	@Override

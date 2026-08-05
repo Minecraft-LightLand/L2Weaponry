@@ -1,5 +1,6 @@
 package dev.xkmc.l2weaponry.compat.cataclysm;
 
+import dev.xkmc.cataclysm_mux.LWCataProxy;
 import dev.xkmc.l2damagetracker.contents.attack.DamageData;
 import dev.xkmc.l2damagetracker.contents.attack.DamageModifier;
 import dev.xkmc.l2damagetracker.contents.materials.generic.ExtraToolConfig;
@@ -50,7 +51,7 @@ public class CursiumTool extends ExtraToolConfig implements LWExtraConfig {
 		if (entity.getTags().contains(ID.toString())) return;
 		entity.addTag(ID.toString());
 		if (entity.getOwner() instanceof LivingEntity e)
-			CataclysmProxy.spawnHalberd(entity.position(), e, 1);
+			LWCataProxy.spawnHalberd(entity.position(), e, 1);
 	}
 
 	@Override
@@ -58,7 +59,7 @@ public class CursiumTool extends ExtraToolConfig implements LWExtraConfig {
 		if (entity.getTags().contains(ID.toString())) return;
 		entity.addTag(ID.toString());
 		if (entity.getOwner() instanceof LivingEntity e) {
-			CataclysmProxy.spawnHalberd(target.position(), e, 1);
+			LWCataProxy.spawnHalberd(target.position(), e, 1);
 		}
 	}
 

@@ -1,5 +1,6 @@
 package dev.xkmc.l2weaponry.compat.cataclysm;
 
+import dev.xkmc.cataclysm_mux.LWCataProxy;
 import dev.xkmc.l2damagetracker.contents.attack.DamageData;
 import dev.xkmc.l2damagetracker.contents.materials.generic.ExtraToolConfig;
 import dev.xkmc.l2weaponry.content.item.base.IExplosionSource;
@@ -31,7 +32,7 @@ public class AncientTraveller extends MacheteItem implements LegendaryWeapon, IE
 		if (data.getStrength() < 0.95) return;
 		var attacker = data.getAttacker();
 		if (attacker == null) return;
-		CataclysmProxy.inflictStun(attacker, data.getTarget(), 20);
+		LWCataProxy.inflictStun(attacker, data.getTarget(), 20);
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class AncientTraveller extends MacheteItem implements LegendaryWeapon, IE
 			var bonus = 1 + LWConfig.SERVER.claw_bonus.get() * Mth.clamp(count, 0, max);
 			time = (int) (time * bonus);
 		}
-		CataclysmProxy.inflictStun(attacker, le, time);
+		LWCataProxy.inflictStun(attacker, le, time);
 	}
 
 	@Override

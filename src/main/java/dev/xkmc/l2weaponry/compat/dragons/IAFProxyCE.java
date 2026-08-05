@@ -4,7 +4,7 @@ import com.iafenvoy.iceandfire.IceAndFire;
 import com.iafenvoy.iceandfire.item.ability.BuiltinAbilities;
 import com.iafenvoy.iceandfire.registry.IafBlocks;
 import com.iafenvoy.iceandfire.registry.IafItems;
-import com.iafenvoy.iceandfire.registry.IafToolMaterials;
+import com.iafenvoy.iceandfire.registry.IafTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -84,17 +84,17 @@ public class IAFProxyCE implements IAFProxy {
 
 	@Override
 	public Tier tierIce() {
-		return IafToolMaterials.DRAGONSTEEL_ICE;
+		return IafTiers.DRAGONSTEEL_ICE;
 	}
 
 	@Override
 	public Tier tierFire() {
-		return IafToolMaterials.DRAGONSTEEL_FIRE;
+		return IafTiers.DRAGONSTEEL_FIRE;
 	}
 
 	@Override
 	public Tier tierLightning() {
-		return IafToolMaterials.DRAGONSTEEL_LIGHTNING;
+		return IafTiers.DRAGONSTEEL_LIGHTNING;
 	}
 
 	@Override

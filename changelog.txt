@@ -1,3 +1,6 @@
+3.1.3
+- Support updated Cataclysm / Ice and Fire CE
+
 3.1.2
 - Add config for throwable weapons throwability
 
