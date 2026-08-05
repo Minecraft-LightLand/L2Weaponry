@@ -53,13 +53,18 @@ public class IAFProxyCE implements IAFProxy {
 		}
 	}
 
+	private int rec = 0;
+
 	@Override
 	public void lightningHit(ItemStack stack, LivingEntity target, LivingEntity user) {
+		rec++;
 		try {
-			BuiltinAbilities.DRAGONSTEEL_LIGHTNING_TOOL.active(stack, target, user);
+			if (rec <= 1)
+				BuiltinAbilities.DRAGONSTEEL_LIGHTNING_TOOL.active(stack, target, user);
 		} catch (Throwable ignore) {
 
 		}
+		rec--;
 
 	}
 
