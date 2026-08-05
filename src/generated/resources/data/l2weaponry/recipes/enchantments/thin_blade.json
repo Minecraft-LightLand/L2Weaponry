@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:and",
+        "values": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "ars_nouveau"
+          },
+          {
+            "type": "l2library:boolean_config",
+            "expected": true,
+            "line": [
+              "useArsNouveauForEnchantmentRecipe"
+            ],
+            "path": "l2_configs/l2complements-common.toml"
+          }
+        ]
+      }
+    }
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:book"
+    },
+    "C": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "D": {
+      "item": "l2complements:captured_shulker_bullet"
+    },
+    "L": {
+      "item": "l2complements:captured_wind"
+    }
+  },
+  "pattern": [
+    " L ",
+    "CBC",
+    " D "
+  ],
+  "result": {
+    "item": "minecraft:enchanted_book",
+    "nbt": {
+      "StoredEnchantments": [
+        {
+          "id": "l2weaponry:thin_blade",
+          "lvl": 1
+        }
+      ]
+    }
+  }
+}

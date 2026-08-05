@@ -12,6 +12,7 @@ import dev.xkmc.l2weaponry.content.item.base.LWTieredItem;
 import dev.xkmc.l2weaponry.content.item.types.ClawItem;
 import dev.xkmc.l2weaponry.content.item.types.DaggerItem;
 import dev.xkmc.l2weaponry.content.item.types.MacheteItem;
+import dev.xkmc.l2weaponry.content.item.types.ScytheItem;
 import dev.xkmc.l2weaponry.init.L2Weaponry;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.AxeItem;
@@ -41,6 +42,9 @@ public class LWEnchantments {
 	public static final EnchantmentCategory CLAW = EnchantmentCategory.create("claws", e ->
 			e instanceof ClawItem);
 
+	public static final EnchantmentCategory SCYTHE = EnchantmentCategory.create("scythes", e ->
+			e instanceof ScytheItem);
+
 	public static final RegistryEntry<EnderHandEnchantment> ENDER_HAND;
 	public static final RegistryEntry<ProjectionEnchantment> PROJECTION;
 	public static final RegistryEntry<SingleLevelEnchantment> INSTANT_THROWING;
@@ -52,6 +56,7 @@ public class LWEnchantments {
 	public static final RegistryEntry<RaisedSpiritEnchantment> RAISED_SPIRIT;
 	public static final RegistryEntry<SingleLevelEnchantment> GHOST_SLASH;
 	public static final RegistryEntry<ClawBlockEnchantment> CLAW_BLOCK;
+	public static final RegistryEntry<ThinBladeEnchantment> THIN_BLADE;
 
 
 	static {
@@ -108,6 +113,11 @@ public class LWEnchantments {
 		CLAW_BLOCK = reg("claw_shielding", CLAW, ClawBlockEnchantment::new,
 				"Increase damage blocking time for claws. Works on either hand")
 				.rarity(Enchantment.Rarity.RARE).addSlots(EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND)
+				.defaultLang().register();
+
+		THIN_BLADE = reg("thin_blade", SCYTHE, ThinBladeEnchantment::new,
+				"Reduce attack damage, increase attack speed. Works on scythe.")
+				.rarity(Enchantment.Rarity.RARE).addSlots(EquipmentSlot.MAINHAND)
 				.defaultLang().register();
 	}
 

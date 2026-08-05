@@ -24,7 +24,6 @@ import dev.xkmc.l2weaponry.init.registrate.LWItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -206,6 +205,14 @@ public class RecipeGen {
 					.define('E', Items.CROSSBOW)
 					.define('C', Items.LAPIS_LAZULI)
 					.save(pvd, getID(LWEnchantments.INSTANT_THROWING.get()));
+
+			unlock(pvd, new EnchantmentRecipeBuilder(LWEnchantments.THIN_BLADE.get(), 1)::unlockedBy, LCItems.CAPTURED_WIND.get())
+					.pattern(" L ").pattern("CBC").pattern(" D ")
+					.define('B', Items.BOOK)
+					.define('L', LCItems.CAPTURED_WIND)
+					.define('D', LCItems.CAPTURED_BULLET)
+					.define('C', Items.LAPIS_LAZULI)
+					.save(pvd, getID(LWEnchantments.THIN_BLADE.get()));
 		}
 
 		// jeed
@@ -277,7 +284,7 @@ public class RecipeGen {
 		var ingot = mat.getIngot();
 		Ingredient ing = ingot == Items.NETHERITE_INGOT ? Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE) :
 				ingot == LCMats.ETERNIUM.getIngot() ? Ingredient.of(LCItems.ETERNAL_TEMPLATE) :
-						AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER;
+				AbstractSmithingRecipe.TEMPLATE_PLACEHOLDER;
 		for (LWToolTypes t : LWToolTypes.values()) {
 			if (!mat.hasTool(t)) continue;
 			smithing(pvd, ing, base.getTool(t), ingot, mat.getTool(t));

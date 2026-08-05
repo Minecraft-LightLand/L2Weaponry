@@ -24,7 +24,9 @@
 		"projection": "投影",
 		"projection.desc": "投掷时武器保留，投掷物不可拾取",
 		"instant_shot": "速射",
-		"instant_shot.desc": "右键立即投掷武器，但会进入冷却。潜行时不触发"
+		"instant_shot.desc": "右键立即投掷武器，但会进入冷却。潜行时不触发",
+		"thin_blade": "轻刃",
+		"thin_blade.desc": "提升攻击速度，但造成的伤害降低。适用于镰刀"
 	},
 	"l2weaponry": {
 		"mats.ah": {

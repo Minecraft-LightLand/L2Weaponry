@@ -52,6 +52,8 @@ public class LWConfig {
 		public final ForgeConfigSpec.DoubleValue hardShieldDefenseBonus;
 		public final ForgeConfigSpec.DoubleValue raisedSpiritSpeedBonus;
 		public final ForgeConfigSpec.DoubleValue energizedWillReachBonus;
+		public final ForgeConfigSpec.DoubleValue thinBladeAttackSpeedBonus;
+		public final ForgeConfigSpec.DoubleValue thinBladeAttackReduction;
 		public final ForgeConfigSpec.IntValue instantThrowCooldown;
 		public final ForgeConfigSpec.IntValue daggerInstantThrowCooldown;
 
@@ -140,6 +142,10 @@ public class LWConfig {
 					.defineInRange("instantThrowCooldown", 60, 1, 6000);
 			daggerInstantThrowCooldown = builder.comment("Cooldown for Dagger Instant Throwing")
 					.defineInRange("daggerInstantThrowCooldown", 15, 1, 6000);
+			thinBladeAttackSpeedBonus = builder.comment("Thin Blade enchantment attack speed bonus")
+					.defineInRange("thinBladeAttackSpeedBonus", 0.2, 0.0001, 100);
+			thinBladeAttackReduction = builder.comment("Thin Bladeeavy enchantment attack damage reduction")
+					.defineInRange("thinBladeAttackReduction", 0.1, 0.0001, 100);
 			builder.pop();
 
 			builder.push("Twilight Forest Compat");

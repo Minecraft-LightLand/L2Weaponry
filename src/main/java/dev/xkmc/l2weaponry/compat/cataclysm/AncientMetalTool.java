@@ -1,5 +1,6 @@
 package dev.xkmc.l2weaponry.compat.cataclysm;
 
+import dev.xkmc.cataclysm_mux.LWCataProxy;
 import dev.xkmc.l2damagetracker.contents.attack.AttackCache;
 import dev.xkmc.l2damagetracker.contents.materials.generic.ExtraToolConfig;
 import dev.xkmc.l2weaponry.content.entity.BaseThrownWeaponEntity;
@@ -30,7 +31,7 @@ public class AncientMetalTool extends ExtraToolConfig implements LWExtraConfig {
 			float speed = (float) player.getAttributeValue(Attributes.ATTACK_SPEED);
 			time = (int) (20 / Mth.clamp(speed, 0.5f, 2));
 		}
-		CataclysmProxy.inflictStun(attacker, data.getAttackTarget(), time);
+		LWCataProxy.inflictStun(attacker, data.getAttackTarget(), time);
 	}
 
 	@Override

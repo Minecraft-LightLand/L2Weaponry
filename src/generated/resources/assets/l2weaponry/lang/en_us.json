@@ -23,6 +23,8 @@
   "enchantment.l2weaponry.raised_spirit.desc": "Gradually increase machete attack speed when stacking consecutive attacks. Conflicts with Energized Will.",
   "enchantment.l2weaponry.stealth": "Stealth",
   "enchantment.l2weaponry.stealth.desc": "Dagger damage has a chance to not aggravate enemy, but reduce damage.",
+  "enchantment.l2weaponry.thin_blade": "Thin Blade",
+  "enchantment.l2weaponry.thin_blade.desc": "Reduce attack damage, increase attack speed. Works on scythe.",
   "entity.l2weaponry.dagger": "Dagger",
   "entity.l2weaponry.javelin": "Javelin",
   "entity.l2weaponry.throwing_axe": "Throwing Axe",

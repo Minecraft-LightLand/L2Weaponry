@@ -14,7 +14,7 @@ buildscript {
 
 plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'net.darkhax.curseforgegradle' version '[1.1.24,)'
+    id 'net.darkhax.curseforgegradle' version '[1.1.24,1.2)'
     id "at.stnwtr.gradle-secrets-plugin" version "1.0.1"
     id "com.modrinth.minotaur" version "2.+"
 }
@@ -246,13 +246,18 @@ dependencies {
     compileOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
     compileOnly fg.deobf("curse.maven:uranus-1010827:6095271")
     compileOnly fg.deobf("curse.maven:jupiter-1072905:5881564")
-    compileOnly fg.deobf("com.iafenvoy:iceandfire:1.0-1.20.1-forge")
+    compileOnly fg.deobf("curse.maven:iceandfire-ce-1040076:8457172")
 
     implementation fg.deobf("curse.maven:valhelsia-core-416935:5189548")
     implementation fg.deobf("curse.maven:forbidden-arcanus-309858:5198323")
 
     implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")
     implementation fg.deobf("curse.maven:lendercataclysm-551586:6331219")
+
+    implementation fg.deobf(jarJar("dev.xkmc.cataclysm_mux:cataclysm_mux:0.0.6")) {
+        transitive = false
+        jarJar.ranged(it, "[0.0.6,)")
+    }
 
 }
 

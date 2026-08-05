@@ -380,6 +380,8 @@
   "enchantment.l2weaponry.projection.desc": "投掷时武器保留，投掷物不可拾取",
   "enchantment.l2weaponry.instant_shot": "速射",
   "enchantment.l2weaponry.instant_shot.desc": "右键立即投掷武器，但会进入冷却。潜行时不触发",
+  "enchantment.l2weaponry.thin_blade": "轻刃",
+  "enchantment.l2weaponry.thin_blade.desc": "提升攻击速度，但造成的伤害降低。适用于镰刀",
   "l2weaponry.mats.ah.arsonist": "点燃目标%s秒",
   "l2weaponry.mats.ah.arsonist_shield": "阻挡近战伤害时对不免疫火焰的生物造成%s点伤害",
   "l2weaponry.mats.ah.volucite": "持有者即将受到摔落伤害时会获得缓降效果",

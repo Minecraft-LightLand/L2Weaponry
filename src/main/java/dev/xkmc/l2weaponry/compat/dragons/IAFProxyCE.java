@@ -2,21 +2,14 @@ package dev.xkmc.l2weaponry.compat.dragons;
 
 import com.iafenvoy.iceandfire.IceAndFire;
 import com.iafenvoy.iceandfire.config.IafCommonConfig;
-import com.iafenvoy.iceandfire.data.component.IafEntityData;
-import com.iafenvoy.iceandfire.entity.EntityFireDragon;
-import com.iafenvoy.iceandfire.entity.EntityIceDragon;
+import com.iafenvoy.iceandfire.item.tool.DragonSteelOverrides;
 import com.iafenvoy.iceandfire.item.tool.DragonSteelToolMaterial;
 import com.iafenvoy.iceandfire.registry.IafBlocks;
 import com.iafenvoy.iceandfire.registry.IafItems;
-import dev.xkmc.l2weaponry.events.LWGeneralEvents;
+import dev.xkmc.l2weaponry.content.item.base.WeaponItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
@@ -27,17 +20,12 @@ import java.util.function.Supplier;
 
 public class IAFProxyCE implements IAFProxy {
 
+	private static final DragonSteelOverrides<WeaponItem> DUMMY = () -> null;
+
 	@Override
 	public void fireHit(ItemStack stack, LivingEntity target, LivingEntity user) {
 		try {
-			if (IafCommonConfig.INSTANCE.armors.dragonFireAbility.getValue()) {
-				if (target instanceof EntityIceDragon) {
-					target.hurt(user.level().damageSources().inFire(), 13.5F);
-				}
-
-				target.setSecondsOnFire(5);
-				target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
-			}
+			DUMMY.hurtEnemy((WeaponItem) stack.getItem(), stack, target, user);
 		} catch (Throwable ignore) {
 
 		}
@@ -60,17 +48,7 @@ public class IAFProxyCE implements IAFProxy {
 	public void iceHit(ItemStack stack, LivingEntity target, LivingEntity user) {
 
 		try {
-			if (IafCommonConfig.INSTANCE.armors.dragonIceAbility.getValue()) {
-				if (target instanceof EntityFireDragon) {
-					target.hurt(user.level().damageSources().drown(), 13.5F);
-				}
-
-				IafEntityData data = IafEntityData.get(target);
-				data.frozenData.setFrozen(target, 200);
-				target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
-				target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
-				target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
-			}
+			DUMMY.hurtEnemy((WeaponItem) stack.getItem(), stack, target, user);
 		} catch (Throwable ignore) {
 
 		}
@@ -88,36 +66,18 @@ public class IAFProxyCE implements IAFProxy {
 		}
 	}
 
+	private int rec = 0;
+
 	@Override
 	public void lightningHit(ItemStack stack, LivingEntity target, LivingEntity user) {
+		rec++;
 		try {
-			if (IafCommonConfig.INSTANCE.armors.dragonLightningAbility.getValue()) {
-				boolean flag = !(user instanceof Player) || !((double) user.attackAnim > 0.2);
-
-				if (!user.level().isClientSide && flag) {
-					LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(target.level());
-
-					assert lightningboltentity != null;
-
-					lightningboltentity.getTags().add("iceandfire.bolt_skip_loot");
-					lightningboltentity.getTags().add(user.getStringUUID());
-					lightningboltentity.addTag(LWGeneralEvents.LIGHTNING);
-					lightningboltentity.moveTo(target.position());
-					if (!target.level().isClientSide) {
-						target.level().addFreshEntity(lightningboltentity);
-					}
-				}
-
-				if (target instanceof EntityFireDragon || target instanceof EntityIceDragon) {
-					target.hurt(user.level().damageSources().lightningBolt(), 9.5F);
-				}
-
-				target.knockback(1.0, user.getX() - target.getX(), user.getZ() - target.getZ());
-			}
+			if (rec <= 1)
+				DUMMY.hurtEnemy((WeaponItem) stack.getItem(), stack, target, user);
 		} catch (Throwable ignore) {
 
 		}
-
+		rec--;
 	}
 
 	@Override
@@ -144,17 +104,17 @@ public class IAFProxyCE implements IAFProxy {
 
 	@Override
 	public Tier tierIce() {
-		return DragonSteelToolMaterial.createMaterialWithRepairItem(IafItems.DRAGONSTEEL_ICE_INGOT::get, "dragonsteel_tier_ice");
+		return DragonSteelToolMaterial.createMaterialWithRepairItem(IafItems.DRAGONSTEEL_ICE_INGOT::get);
 	}
 
 	@Override
 	public Tier tierFire() {
-		return DragonSteelToolMaterial.createMaterialWithRepairItem(IafItems.DRAGONSTEEL_FIRE_INGOT::get, "dragonsteel_tier_fire");
+		return DragonSteelToolMaterial.createMaterialWithRepairItem(IafItems.DRAGONSTEEL_FIRE_INGOT::get);
 	}
 
 	@Override
 	public Tier tierLightning() {
-		return DragonSteelToolMaterial.createMaterialWithRepairItem(IafItems.DRAGONSTEEL_LIGHTNING_INGOT::get, "dragonsteel_tier_lightning");
+		return DragonSteelToolMaterial.createMaterialWithRepairItem(IafItems.DRAGONSTEEL_LIGHTNING_INGOT::get);
 	}
 
 	@Override

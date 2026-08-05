@@ -1,5 +1,6 @@
 package dev.xkmc.l2weaponry.compat.cataclysm;
 
+import dev.xkmc.cataclysm_mux.LWCataProxy;
 import dev.xkmc.l2damagetracker.contents.attack.AttackCache;
 import dev.xkmc.l2damagetracker.contents.materials.generic.ExtraToolConfig;
 import dev.xkmc.l2weaponry.content.entity.BaseThrownWeaponEntity;
@@ -46,7 +47,7 @@ public class SoulHarvester extends ScytheItem implements LegendaryWeapon {
 			int max = item.getMaxStack(stack, attacker);
 			factor *= 1 + 0.2f * Mth.clamp(count, 0, max);
 		}
-		CataclysmProxy.stackBlazingBrand(attacker, data.getAttackTarget(), factor);
+		LWCataProxy.stackBlazingBrand(attacker, data.getAttackTarget(), factor);
 	}
 
 	@Override
