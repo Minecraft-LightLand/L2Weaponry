@@ -1,3 +1,6 @@
+2.6.3
+- Fix Thin Blade enchantment
+
 2.6.2
 - Support updated Cataclysm / Ice and Fire CE
 

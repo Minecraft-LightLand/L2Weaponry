@@ -28,8 +28,8 @@ public class ThinBladeEnchantment extends UnobtainableEnchantment implements Att
 	@Override
 	public void addAttributes(int level, ItemAttributeModifierEvent event) {
 		if (event.getSlotType() == EquipmentSlot.MAINHAND) {
-			event.addModifier(Attributes.ATTACK_SPEED, new AttributeModifier(ID_SPEED, NAME_SPEED, LWConfig.COMMON.thinBladeAttackSpeedBonus.get() * level, AttributeModifier.Operation.ADDITION));
-			event.addModifier(Attributes.ATTACK_DAMAGE, new AttributeModifier(ID_DMG, NAME_DMG, -LWConfig.COMMON.thinBladeAttackReduction.get() * level, AttributeModifier.Operation.ADDITION));
+			event.addModifier(Attributes.ATTACK_SPEED, new AttributeModifier(ID_SPEED, NAME_SPEED, LWConfig.COMMON.thinBladeAttackSpeedBonus.get() * level, AttributeModifier.Operation.MULTIPLY_TOTAL));
+			event.addModifier(Attributes.ATTACK_DAMAGE, new AttributeModifier(ID_DMG, NAME_DMG, -LWConfig.COMMON.thinBladeAttackReduction.get() * level, AttributeModifier.Operation.MULTIPLY_TOTAL));
 		}
 	}
 
